@@ -34,8 +34,4 @@ public class Server{
             System.out.println(e);
         }
     }
-    public static void main(String[] args) {
-        Server server=new Server();
-        server.startServer(6666);
-    }
 }

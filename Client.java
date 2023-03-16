@@ -5,6 +5,13 @@ public class Client extends Thread{
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
+    private RobotController robot;
+
+    private String currentCommand;
+
+    public Client(){
+        robot = new RobotController();
+    }
 
     public void startConnection(String ip, int port) {
         try{
@@ -14,10 +21,22 @@ public class Client extends Thread{
             String inputLine;
             while((inputLine = in.readLine()) != null){
                 System.out.println(inputLine);
+                if(inputLine == "forward") robot.forward();
+                if(inputLine == "backward") robot.backward();
+                if(inputLine == "left") robot.left();
+                if(inputLine == "right") robot.right();
+
+                if(inputLine == "unforward" && currentCommand == "forward") robot.stop();
+                if(inputLine == "unbackward" && currentCommand == "backward") robot.stop();;
+                if(inputLine == "unleft" && currentCommand == "left") robot.stop();;
+                if(inputLine == "unright" && currentCommand == "right") robot.stop();;
+
+                currentCommand = inputLine;
             }
         }
         catch(IOException e){
             System.out.println(e);
+            robot.stop();
         }
     }
 

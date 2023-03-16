@@ -1,7 +1,5 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -14,7 +12,9 @@ public class MainScreenMain extends MainScreen {
     private  MenuClass leftButton; 
     private  MenuClass rightButton;
     private  MenuClass tiltLeftButton;
-    private  MenuClass tiltRightButton;   
+    private  MenuClass tiltRightButton; 
+    
+    private Server server = new Server();
 
     public MainScreenMain(String title, Color color){
         super(title, color);
@@ -25,6 +25,8 @@ public class MainScreenMain extends MainScreen {
         rightButton= new PressButton("Right", 520, 300, Color.RED);
         tiltLeftButton= new PressButton("Tilt Left", 80, 200, Color.RED);
         tiltRightButton= new PressButton("Tilt Right", 520, 200, Color.RED);
+
+        server.startServer(6666);
     }
 
 
@@ -51,16 +53,24 @@ public class MainScreenMain extends MainScreen {
 
     public boolean keyPressed(KeyEvent ke){
         //W key 
-        if(ke.getKeyCode() == 87){upButton.lightUp();}
+        if(ke.getKeyCode() == 87){upButton.lightUp();
+            server.sendMessage("forward");
+        }
 
         //A key
-        if(ke.getKeyCode() == 65){leftButton.lightUp();}
+        if(ke.getKeyCode() == 65){leftButton.lightUp();
+            server.sendMessage("left");
+        }
 
         //S key 
-        if(ke.getKeyCode() == 83){downButton.lightUp();}
+        if(ke.getKeyCode() == 83){downButton.lightUp();
+            server.sendMessage("backward");
+        }
 
         //D key 
-        if(ke.getKeyCode() == 68){rightButton.lightUp();}
+        if(ke.getKeyCode() == 68){rightButton.lightUp();
+            server.sendMessage("right");
+        }
 
         //Q key 
         if(ke.getKeyCode() == 81){tiltLeftButton.lightUp();}
@@ -80,10 +90,14 @@ public class MainScreenMain extends MainScreen {
 
 
     public void keyReleased(KeyEvent ke){
-        if(ke.getKeyCode() == 87){upButton.shutDown();}
-        if(ke.getKeyCode() == 65){leftButton.shutDown();} 
-        if(ke.getKeyCode() == 83){downButton.shutDown();}
-        if(ke.getKeyCode() == 68){rightButton.shutDown();}
+        if(ke.getKeyCode() == 87){upButton.shutDown();
+            server.sendMessage("unforward");}
+        if(ke.getKeyCode() == 65){leftButton.shutDown();
+            server.sendMessage("unleft");} 
+        if(ke.getKeyCode() == 83){downButton.shutDown();
+            server.sendMessage("unbackward");}
+        if(ke.getKeyCode() == 68){rightButton.shutDown();
+            server.sendMessage("unright");}
         if(ke.getKeyCode() == 81){tiltLeftButton.shutDown();}
         if(ke.getKeyCode() == 69){tiltRightButton.shutDown();}
         if(ke.getKeyCode() == 10){powerButton.shutDown();}

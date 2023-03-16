@@ -13,15 +13,14 @@ public class Server{
             clientSocket = serverSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            BufferedReader stdIn =new BufferedReader(new InputStreamReader(System.in));
-            
-            while(true){
-                out.println("Server: " + stdIn.readLine());
-            }
         }
         catch(IOException e){
             System.out.println(e);
         }
+    }
+
+    public void sendMessage(String m){
+        out.println(m);
     }
 
     public void stopServer() {

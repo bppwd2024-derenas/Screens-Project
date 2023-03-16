@@ -47,7 +47,7 @@ public class Client extends Thread{
     public static void main(String[] args){
         Client client = new Client();
         while (true){
-            client.startConnection("127.0.0.1", 6666);
+            client.startConnection("10.45.76.113", 6666);
         }
     }
 }

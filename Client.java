@@ -20,16 +20,15 @@ public class Client extends Thread{
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String inputLine;
             while((inputLine = in.readLine()) != null){
-                System.out.println(inputLine);
                 if(inputLine == "forward") robot.forward();
                 if(inputLine == "backward") robot.backward();
                 if(inputLine == "left") robot.left();
                 if(inputLine == "right") robot.right();
 
                 if(inputLine == "unforward" && currentCommand == "forward") robot.stop();
-                if(inputLine == "unbackward" && currentCommand == "backward") robot.stop();;
-                if(inputLine == "unleft" && currentCommand == "left") robot.stop();;
-                if(inputLine == "unright" && currentCommand == "right") robot.stop();;
+                if(inputLine == "unbackward" && currentCommand == "backward") robot.stop();
+                if(inputLine == "unleft" && currentCommand == "left") robot.stop();
+                if(inputLine == "unright" && currentCommand == "right") robot.stop();
 
                 currentCommand = inputLine;
             }

@@ -40,5 +40,5 @@ while True:
            s.close()
            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
            s.connect(("10.45.76.113", 6666))
-       except IOError:
-           print(IOError)
+       except:
+           print("Trying to connect to server")

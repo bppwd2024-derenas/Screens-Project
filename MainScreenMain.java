@@ -19,12 +19,9 @@ public class MainScreenMain extends MainScreen {
     public MainScreenMain(String title, Color color){
         super(title, color);
         upButton= new PressButton("Up", 300, 200, Color.RED);
-        downButton= new PressButton("Down", 300, 400, Color.RED);
-        powerButton= new PressButton("⏻", 300, 300, Color.RED);
+        downButton= new PressButton("Down", 300, 300, Color.RED);
         leftButton= new PressButton("Left", 80, 300, Color.RED);
         rightButton= new PressButton("Right", 520, 300, Color.RED);
-        tiltLeftButton= new PressButton("Tilt Left", 80, 200, Color.RED);
-        tiltRightButton= new PressButton("Tilt Right", 520, 200, Color.RED);
 
         server.startServer(6666);
     }
@@ -40,12 +37,8 @@ public class MainScreenMain extends MainScreen {
          pen.drawRect(0,0, 782, 760);
          upButton.draw(pen);
          downButton.draw(pen);
-         powerButton.draw(pen);
          leftButton.draw(pen);
          rightButton.draw(pen);
-         tiltLeftButton.draw(pen);
-         tiltRightButton.draw(pen);
-
     }
 
 
@@ -72,15 +65,6 @@ public class MainScreenMain extends MainScreen {
             server.sendMessage("right");
         }
 
-        //Q key 
-        if(ke.getKeyCode() == 81){tiltLeftButton.lightUp();}
-
-        //E key
-        if(ke.getKeyCode() == 69){tiltRightButton.lightUp();}
-
-        //Enter key 
-        if(ke.getKeyCode() == 10){powerButton.lightUp();}
-
         //Exit Ket 
         if(ke.getKeyCode() == 27){return(true);}
 
@@ -98,9 +82,6 @@ public class MainScreenMain extends MainScreen {
             server.sendMessage("unbackward");}
         if(ke.getKeyCode() == 68){rightButton.shutDown();
             server.sendMessage("unright");}
-        if(ke.getKeyCode() == 81){tiltLeftButton.shutDown();}
-        if(ke.getKeyCode() == 69){tiltRightButton.shutDown();}
-        if(ke.getKeyCode() == 10){powerButton.shutDown();}
     }
 
     public boolean mouseClicked(MouseEvent ke){
@@ -122,8 +103,5 @@ public class MainScreenMain extends MainScreen {
         downButton.mouseMoved(me);
         leftButton.mouseMoved(me);
         rightButton.mouseMoved(me);
-        powerButton.mouseMoved(me);
-        tiltLeftButton.mouseMoved(me);
-        tiltRightButton.mouseMoved(me);
     }
 }

@@ -18,8 +18,6 @@ def stop():
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 currentCommand = ""
 
-s.connect(("10.45.76.113", 6666))
-
 while True:
     try:
         command = s.recv(1024).decode().strip()

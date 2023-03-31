@@ -8,11 +8,8 @@ public class MainScreenMain extends MainScreen {
    
     private  MenuClass upButton; 
     private  MenuClass downButton; 
-    private  MenuClass powerButton;
     private  MenuClass leftButton; 
-    private  MenuClass rightButton;
-    private  MenuClass tiltLeftButton;
-    private  MenuClass tiltRightButton; 
+    private  MenuClass rightButton; 
     
     private Server server = new Server();
 

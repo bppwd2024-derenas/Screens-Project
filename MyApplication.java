@@ -39,7 +39,6 @@ public class MyApplication extends RunApp  {
         if(activeScreen.keyPressed(ke) == true){
             activeScreen=startScreen;
         }
-    
     }
 
     @Override
@@ -72,9 +71,5 @@ public class MyApplication extends RunApp  {
     public void mouseMoved(MouseEvent me){activeScreen.mouseMoved(me);}
         
     //Launches the Game
-    public static void main(String[] args) { new MyApplication().start(TITLE, SCREEN_WIDTH,SCREEN_HEIGHT); }
-
-
-
-   
+    public static void main(String[] args) { new MyApplication().start(TITLE, SCREEN_WIDTH,SCREEN_HEIGHT); }   
 }

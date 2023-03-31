@@ -3,7 +3,6 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-
 public class MainScreenMain extends MainScreen {   
    
     private  MenuClass upButton; 
@@ -23,11 +22,7 @@ public class MainScreenMain extends MainScreen {
         server.startServer(6666);
     }
 
-
     public void update() {}
-    
-        
-    
 
     public void draw(Graphics pen) {
          pen.setColor(super.color);
@@ -37,7 +32,6 @@ public class MainScreenMain extends MainScreen {
          leftButton.draw(pen);
          rightButton.draw(pen);
     }
-
 
     public void keyTyped(KeyEvent ke){}
 
@@ -68,7 +62,6 @@ public class MainScreenMain extends MainScreen {
         return(false);
 
     }
-
 
     public void keyReleased(KeyEvent ke){
         if(ke.getKeyCode() == 87){upButton.shutDown();

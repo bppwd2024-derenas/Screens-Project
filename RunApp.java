@@ -31,7 +31,6 @@ public abstract class RunApp implements KeyListener, MouseListener, MouseMotionL
         run();
     }
 
-
     class GamePanel extends JPanel
     {
         private static final long serialVersionUID = 1L;

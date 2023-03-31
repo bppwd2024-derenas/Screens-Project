@@ -21,7 +21,6 @@ public class PressButton extends MenuClass{
        super.draw(pen);
     }
 
-
     public void keyTyped(KeyEvent ke){}
 
     public void keyPressed(KeyEvent ke){}
@@ -80,8 +79,6 @@ public class PressButton extends MenuClass{
         else{
             box= saveColor;
             textC= Color.WHITE;
-
         }
     }
-
 }

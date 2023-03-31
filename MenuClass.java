@@ -46,5 +46,4 @@ public abstract class MenuClass{
     public abstract void mouseExited(MouseEvent me);
     public abstract void mouseDragged(MouseEvent me);
     public abstract void mouseMoved(MouseEvent me);
-
 }

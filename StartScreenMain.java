@@ -12,7 +12,6 @@ public class StartScreenMain extends MainScreen{
         startButton= new PressButton("Start Program", 300, 300, Color.GREEN);
     }
 
-
     public void update() {}
     
     public void draw(Graphics pen) {
@@ -31,6 +30,7 @@ public class StartScreenMain extends MainScreen{
         }
         return(false);
     }
+
     public void mousePressed(MouseEvent me){}
     public void mouseReleased(MouseEvent me){}
     public void mouseEntered(MouseEvent me){}
@@ -39,6 +39,4 @@ public class StartScreenMain extends MainScreen{
     public void mouseMoved(MouseEvent me){
         startButton.mouseMoved(me);
     }
-
-
 }

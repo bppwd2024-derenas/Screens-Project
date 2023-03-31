@@ -8,8 +8,6 @@ public abstract class MainScreen {
 
     private String title; 
     protected Color color;
-   
-    
 
     public MainScreen(String t, Color c){
         title=t;
@@ -18,7 +16,6 @@ public abstract class MainScreen {
 
     public abstract void update();
 
-
     public void draw(Graphics pen) {
         pen.setFont(new Font("Arial",1,80));
         pen.setColor(color);
@@ -26,9 +23,7 @@ public abstract class MainScreen {
         pen.setFont(new Font("Arial",1,40));
         pen.drawRect(0,0, 782, 760);
         
-    }
-
-    
+    }    
 
     public abstract void keyTyped(KeyEvent ke);
     public abstract boolean keyPressed(KeyEvent ke);

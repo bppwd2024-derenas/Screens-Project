@@ -15,7 +15,6 @@ def right():
 def stop():
     print("Stopping")
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 currentCommand = ""
 
 while True:
@@ -23,14 +22,14 @@ while True:
         command = s.recv(1024).decode().strip()
 
         if(command == "forward" and currentCommand != "forward"): forward()
-        if(command == "backward" and currentCommand != "backward"): backward()
-        if(command == "left" and currentCommand != "left"): left()
-        if(command == "right"  and currentCommand != "right"): right()
+        elif(command == "backward" and currentCommand != "backward"): backward()
+        elif(command == "left" and currentCommand != "left"): left()
+        elif(command == "right"  and currentCommand != "right"): right()
 
-        if(command == "unforward" and currentCommand == "forward"): stop()
-        if(command == "unbackward" and currentCommand == "backward"): stop()
-        if(command == "unleft" and currentCommand == "left"): stop()
-        if(command == "unright" and currentCommand == "right"): stop()
+        elif(command == "unforward" and currentCommand == "forward"): stop()
+        elif(command == "unbackward" and currentCommand == "backward"): stop()
+        elif(command == "unleft" and currentCommand == "left"): stop()
+        elif(command == "unright" and currentCommand == "right"): stop()
 
         currentCommand = command;   
     except:
